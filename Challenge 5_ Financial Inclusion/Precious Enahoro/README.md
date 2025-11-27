@@ -8,41 +8,6 @@ This project explores how smallholder farmers discuss financial topics such as m
 - Question 2: What patterns are you looking for?
 - Question 3: What insights do you hope to provide?
 
-## Methodology
-
-### Data Sources
-- List the datasets you're using
-- Note any external data sources (weather, agricultural calendars, etc.)
-- Document any data preprocessing steps
-
-### Approach
-1. **Step 1**: Data loading and initial exploration
-2. **Step 2**: Data cleaning and preprocessing
-3. **Step 3**: Analysis techniques applied
-4. **Step 4**: Visualization and interpretation
-5. **Step 5**: Validation and testing
-
-### Tools and Technologies
-- **Programming Language**: Python 3.x / R
-- **Key Libraries**: pandas, numpy, matplotlib, seaborn, scikit-learn, etc.
-- **GenAI Tools Used**: ChatGPT, GitHub Copilot, etc. (be specific about what and how)
-- **Other Tools**: Jupyter Notebook, Tableau, etc.
-
-## Use of Generative AI
-
-### Tools Used
-- **ChatGPT**: Used for [specific purpose, e.g., "generating initial code structure for data loading"]
-- **GitHub Copilot**: Used for [specific purpose, e.g., "autocompleting repetitive data cleaning code"]
-
-### Human Review Process
-- All AI-generated code was reviewed and tested for accuracy
-- AI-generated insights were validated against the data
-- Modified AI suggestions in the following ways: [list modifications]
-
-### AI-Assisted vs. Human-Created
-- **AI-Assisted**: [List which parts, e.g., "Initial data visualization code structure"]
-- **Human-Created**: [List which parts, e.g., "All analysis logic, interpretation, and conclusions"]
-
 ## Key Findings
 
 ### Finding 1: [Title]
@@ -107,6 +72,41 @@ Description of the finding, supported by data and visualizations.
 2. **Action 2**: How to use these insights
 3. **Action 3**: What additional data or resources would help
 
+## Methodology
+### Data Source
+- Producers Direct English Dataset
+
+### Approach
+1. **Step 1**: Data loading and initial exploration
+2. **Step 2**: Data cleaning and preprocessing
+   Data was deduplicated to remove multiple responses to a particular question, since the analysis focused only on questions. This reduced the final dataset to ~3M rows.
+4. **Step 3**: Analysis techniques applied
+5. **Step 4**: Visualization and interpretation
+Exploratory analysis and visualizations were obtained from Tableau [Tableau Packaged Workbook Uploaded]
+
+### Tools and Technologies
+- **Programming Language**: SQL
+- **GenAI Tools Used**: ChatGPT
+- **Other Tools**: Tableau, Excel.
+
+## Use of Generative AI
+### AI-Assisted vs. Human-Created
+- **AI-Assisted**:
+    - Generating SQL CASE WHEN blocks and regex patterns.
+    - Debugging SQL/regex errors and restructuring complex logic.
+    - Creating aggregation query templates and cleaning functions.
+    - Providing statistical test outputs and helping phrase insight summaries.
+    - Exploratory thought partner on financial taxonomy and figuring out edge cases.
+
+- **Human-Created**
+    - Designed the financial taxonomy and defined all category logic.
+    - Cleaned, prepared, and deduplicated the raw farmer-question dataset.
+    - Built and validated the final classification rules.
+    - Created aggregated tables, trends, and chi-square analyses.
+    - Interpreted patterns (seasonality, country differences, product-level insights).
+    - Designed Tableau visuals and wrote the final analytical narrative.
+    * All AI-generated SQL code and initial insight summaries were reviewed and tested for accuracy.*
+
 ## Files in This Contribution
 
 ```
@@ -131,22 +131,13 @@ your_name_analysis/
     └── processed_sample.csv
 ```
 
-## How to Run This Analysis
+## Dependencies
 
-### Prerequisites
-```bash
-pip install pandas numpy matplotlib seaborn jupyter
+SQL code ran using DuckDB driver in DBeaver.
 ```
 
-### Running the Analysis
-```bash
-# Navigate to the notebooks folder
-cd notebooks/
-
-# Start Jupyter Notebook
-jupyter notebook
-
-# Open and run notebooks in order:
+### Cleaning the Data and Running the Analysis --to be updated
+# Open and run scripts in order:
 # 1. 01_data_exploration.ipynb
 # 2. 02_data_cleaning.ipynb
 # 3. 03_analysis.ipynb
@@ -182,6 +173,6 @@ jupyter notebook
 
 ---
 
-**Last Updated**: [Date]
-**Status**: [In Progress / Complete / Needs Review]
+**Last Updated**: 11/26/2025
+**Status**: In Progress
 
